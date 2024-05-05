@@ -105,3 +105,47 @@ Setting up Spring Config
    4. Sping up the config server
    5. Spin up the microservice
       6. Change the enviroment through cmd or vm arguments
+
+Read config files from file system
+--------------------------------
+![img_1.png](img_1.png)
+
+Read config files from github
+----------------------------
+![img_2.png](img_2.png)
+
+
+Encryption & Decryption of properties inside Config server
+----------------------------------------------------------
+1. Set encrypt property in config server application properties
+   ![img_3.png](img_3.png)
+2. Make localhost:8080/encrypt and localhost:8080/dcrypt apis
+   ![img_4.png](img_4.png)
+3. add {cipher} before all encrypted properties
+   ![img_5.png](img_5.png)
+
+
+Refreshing Configurations at Runtime
+----------------------------------
+1. Make properties mapping bean should not be final or record
+2. Disadvantages
+   3. Refershing of all apis for large applicaton having hundered's of microservices instaces
+![img_6.png](img_6.png)
+![img_7.png](img_7.png)
+
+Refreshing Configurations at Runtime using Spring Cloud Bus
+--------------------------------------------------------
+1. Only have to refresh once
+   2. Even then it is manual or we need automation script
+![img_8.png](img_8.png)
+![img_9.png](img_9.png)
+
+
+Refresh config at runtime using Spring Cloud Bus & Spring Cloud Config monitor
+-----------------------------------------------------------------------------
+1. Automated via github webhook
+2. hookdeck site will help to map local host to public domain url that can be configured in github
+![img_10.png](img_10.png)
+![img_11.png](img_11.png)
+
+
